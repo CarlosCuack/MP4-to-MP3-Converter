@@ -3,14 +3,23 @@ import tkinter as tk
 from tkinter import filedialog
 
 #Variables
-
+Path_Video = None
 
 #Script
 def choosePath():
-    print("HI")
+    global videoPath 
+    videoPath = filedialog.askopenfilename(filetypes=[("Video files", "*.mp4")])
+    Path_Video = videoPath
+
+    fieldVideoPath.config(state=tk.NORMAL)
+    fieldVideoPath.insert(0, Path_Video)
+    fieldVideoPath.config(state=tk.DISABLED)
 
 def convertVideo():
-    path = r"C:\Users\lenoc\Documents\GitHub\MP4-to-MP3-Converter\src\video.mp4"
+    #Raw String
+    path = repr(videoPath)
+
+    print(path)
 
     mp4 = mp.VideoFileClip(path) #Load the .mp4
 
@@ -22,7 +31,7 @@ def chooseAudioPath():
 #UI
 root = tk.Tk()
 root.title("MP4 to MP3 Converter")
-root.geometry('400x200')
+root.geometry('400x220')
 
 #Label
 labelVideoPath = tk.Label(root, text="Please choose de Path of the video:")
@@ -58,6 +67,9 @@ fieldAudioPath.pack()
 #Button Audio Path
 buttonAudioPath = tk.Button(root, text="Audio Path", command=chooseAudioPath)
 buttonAudioPath.pack()
+
+buttonDownload = tk.Button(root, text="Convert!!", command=convertVideo)
+buttonDownload.pack()
 
 #Legacy
 labelLegacy = tk.Label(root, text="MP4 to MP3 Converter.")
