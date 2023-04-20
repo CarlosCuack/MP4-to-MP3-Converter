@@ -17,7 +17,7 @@ def choosePath():
 
 def convertVideo():
     #Raw String
-    path = repr(videoPath)
+    path = r"{}".format(videoPath)
 
     print(path)
 
