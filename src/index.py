@@ -35,44 +35,50 @@ root.geometry('400x220')
 
 #Label
 labelVideoPath = tk.Label(root, text="Please choose de Path of the video:")
-labelVideoPath.pack()
 
 #Field (No enabled)
 fieldVideoPath = tk.Entry(root)
 fieldVideoPath.config(width=40, state=tk.DISABLED)
-fieldVideoPath.pack()
 
 #Button
 buttonPath = tk.Button(root, text="Video path", command=choosePath)
-buttonPath.pack()
 
 #Label Audio
 labelAudioName = tk.Label(root, text="Please write a name (Optional):")
-labelAudioName.pack()
 
 #Field (Enabled)
 fieldAudioName = tk.Entry(root)
 fieldAudioName.config(width=40)
-fieldAudioName.pack()
 
 #Label Audio Path
 labelAudioPath = tk.Label(root, text="Please choose a Path for the audio:")
-labelAudioPath.pack()
 
 #Field Audio Path
 fieldAudioPath = tk.Entry(root)
 fieldAudioPath.config(width=40, state=tk.DISABLED)
-fieldAudioPath.pack()
 
 #Button Audio Path
 buttonAudioPath = tk.Button(root, text="Audio Path", command=chooseAudioPath)
-buttonAudioPath.pack()
 
 buttonDownload = tk.Button(root, text="Convert!!", command=convertVideo)
-buttonDownload.pack()
 
 #Legacy
 labelLegacy = tk.Label(root, text="MP4 to MP3 Converter.")
+
+#Add
+labelVideoPath.pack()
+fieldVideoPath.pack()
+buttonPath.pack()
+
+labelAudioPath.pack()
+fieldAudioPath.pack()
+buttonAudioPath.pack()
+
+labelAudioName.pack()
+fieldAudioName.pack()
+
+buttonDownload.pack()
 labelLegacy.pack()
 
+#Loop
 root.mainloop()
