@@ -21,9 +21,12 @@ def convertVideo():
 
     print(path)
 
+    #Audio Name
+    audioPath = videoPath.replace('.mp4', '.mp3')
+
     mp4 = mp.VideoFileClip(path) #Load the .mp4
 
-    mp4.audio.write_audiofile("audio.mp3")
+    mp4.audio.write_audiofile(audioPath)
 
 def chooseAudioPath():
     print("Hi, may you ignore me?")
@@ -31,7 +34,7 @@ def chooseAudioPath():
 #UI
 root = tk.Tk()
 root.title("MP4 to MP3 Converter")
-root.geometry('400x220')
+root.geometry('400x110')
 
 #Label
 labelVideoPath = tk.Label(root, text="Please choose de Path of the video:")
@@ -70,12 +73,12 @@ labelVideoPath.pack()
 fieldVideoPath.pack()
 buttonPath.pack()
 
-labelAudioPath.pack()
-fieldAudioPath.pack()
-buttonAudioPath.pack()
+# labelAudioPath.pack()
+# fieldAudioPath.pack()
+# buttonAudioPath.pack()
 
-labelAudioName.pack()
-fieldAudioName.pack()
+# labelAudioName.pack()
+# fieldAudioName.pack()
 
 buttonDownload.pack()
 labelLegacy.pack()
